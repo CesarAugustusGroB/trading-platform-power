@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  # MongoDB, Kafka and other local dependencies will be configured here
+  # These are placeholders for future setup
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  kafka:
+    image: bitnami/kafka:latest
+    ports:
+      - "9092:9092"
