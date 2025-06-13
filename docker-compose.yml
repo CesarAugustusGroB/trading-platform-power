@@ -1,12 +1,35 @@
 version: "3.8"
+
 services:
-  # MongoDB, Kafka and other local dependencies will be configured here
-  # These are placeholders for future setup
   mongodb:
-    image: mongo:latest
+    image: mongo:7
+    container_name: mongodb
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
   kafka:
     image: bitnami/kafka:latest
+    container_name: kafka
     ports:
       - "9092:9092"
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+    depends_on:
+      - zookeeper
+
+volumes:
+  mongo-data:

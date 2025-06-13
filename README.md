@@ -37,3 +37,14 @@ trading-platform/
 ```
 
 This skeleton will be expanded with code and infrastructure configurations in later tasks.
+
+## Local development
+
+The `docker-compose.yml` file spins up MongoDB, Zookeeper and Kafka for testing the
+services locally. Start the stack with:
+
+```bash
+docker-compose up -d
+```
+
+MongoDB will be available on `localhost:27017` and Kafka on `localhost:9092`.
