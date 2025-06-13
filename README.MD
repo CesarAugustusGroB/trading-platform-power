@@ -48,3 +48,13 @@ docker-compose up -d
 ```
 
 MongoDB will be available on `localhost:27017` and Kafka on `localhost:9092`.
+
+The compose file also starts basic observability tools:
+
+- **Prometheus** reads its configuration from
+  `infrastructure/observability/prometheus/prometheus.yml` and is reachable at
+  `http://localhost:9090`.
+- **Grafana** depends on Prometheus and is exposed on
+  `http://localhost:3000` (default credentials `admin`/`admin`).
+- **Zipkin** provides distributed tracing and listens on
+  `http://localhost:9411`.
