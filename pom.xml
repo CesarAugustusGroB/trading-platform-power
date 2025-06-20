@@ -8,5 +8,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>services/orderbook-service</module>
+        <module>services/trade-service</module>
+        <module>services/portfolio-service</module>
+        <module>services/wallet-service</module>
+        <module>lambdas/price-feed-lambda</module>
+    </modules>
+
     <!-- Modules will be added as the project expands -->
 </project>
