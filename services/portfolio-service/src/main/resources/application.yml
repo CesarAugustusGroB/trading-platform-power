@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/trading
+  kafka:
+    bootstrap-servers: localhost:9092
