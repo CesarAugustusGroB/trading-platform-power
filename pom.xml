@@ -11,6 +11,8 @@
     <modules>
         <module>services/orderbook-service</module>
         <module>services/trade-service</module>
+        <module>services/portfolio-service</module>
+        <module>services/wallet-service</module>
     </modules>
 
     <!-- Modules will be added as the project expands -->
