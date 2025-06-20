@@ -5,3 +5,14 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
+
+  # Scrape Spring Boot services for Prometheus metrics
+  - job_name: 'microservices'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+          - orderbook-service:8080
+          - trade-service:8080
+          - wallet-service:8080
+          - portfolio-service:8080
+          - market-feed-service:8080

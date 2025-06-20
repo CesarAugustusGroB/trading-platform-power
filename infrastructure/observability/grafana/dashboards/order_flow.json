@@ -1,0 +1,22 @@
+{
+  "id": null,
+  "title": "Order Flow",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Orders Placed",
+      "datasource": "Prometheus",
+      "targets": [ { "expr": "orders_placed_total" } ],
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "stat",
+      "title": "Trades Executed",
+      "datasource": "Prometheus",
+      "targets": [ { "expr": "trades_executed_total" } ],
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    }
+  ],
+  "schemaVersion": 38,
+  "version": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": null,
+  "title": "Trading Activity",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "Orders vs Trades",
+      "datasource": "Prometheus",
+      "targets": [
+        { "expr": "orders_placed_total", "legendFormat": "orders" },
+        { "expr": "trades_executed_total", "legendFormat": "trades" }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 8 }
+    }
+  ],
+  "schemaVersion": 38,
+  "version": 1
+}
