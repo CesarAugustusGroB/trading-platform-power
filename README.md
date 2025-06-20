@@ -58,3 +58,12 @@ The compose file also starts basic observability tools:
   `http://localhost:3000` (default credentials `admin`/`admin`).
 - **Zipkin** provides distributed tracing and listens on
   `http://localhost:9411`.
+
+## Documentation
+
+Further setup instructions, example API calls and an architecture overview are
+available in the [`docs`](docs) folder:
+
+- [Local Setup](docs/local_setup.md)
+- [API Examples](docs/api_examples.md)
+- [Architecture Diagram](docs/architecture.puml)
