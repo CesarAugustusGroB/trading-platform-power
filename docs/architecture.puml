@@ -1,0 +1,23 @@
+@startuml
+actor User
+queue Kafka
+Database MongoDB
+
+component OrderbookService
+component WalletService
+component TradeService
+component PortfolioService
+cloud "PriceFeedLambda" as PriceFeed
+
+User --> OrderbookService
+User --> WalletService
+User --> PortfolioService
+OrderbookService --> Kafka : order.placed
+OrderbookService --> MongoDB
+WalletService --> MongoDB
+TradeService --> Kafka : consume order.placed
+TradeService --> MongoDB
+PortfolioService --> MongoDB
+PriceFeed --> Kafka : market.price
+PriceFeed --> MongoDB : latest price
+@enduml
